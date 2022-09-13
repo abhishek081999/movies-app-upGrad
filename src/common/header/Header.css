@@ -1,0 +1,34 @@
+.header {
+    background-color: #222;
+    height: 36px;
+  
+    /* Padding is in the Order of Top, Right, Bottom & Left */
+    padding: 8px 32px 8px 16px;
+  
+    /* Color Property is applied for Testing Only */
+    color: white;
+  }
+  
+  .header > img {
+    background-color: #ff7f7f;
+    height: 35px;
+    animation: logoRotation 8s linear infinite;
+  }
+  
+  @keyframes logoRotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
