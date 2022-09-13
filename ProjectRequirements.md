@@ -41,3 +41,17 @@
 
             - ‘Home.js’ file
             - 'Home.css’ file
+
+
+
+            # Steps to search for a component in Material-UI:
+
+- Go to the website of Material-UI.
+- Click on the Hamburger icon on the left side.
+- Click on Component API. Here, you can see a list of components that are provided by Material-UI.
+- Click on the required component, say ‘Menu’. You can see an import statement used for the component. You can also see the list of props that you can pass with the component.
+- After this, you can see the CSS API. It helps you to override the classes injected by Material-UI. This is very helpful when you want to use Material-UI components but want to customise their look and feel.
+- In the end, you’ll see a section named ‘Demos’. This is very helpful as it shows the component in action so that you know how to use the component in your application.
+
+- Click on the ‘Demos’ section (if available) at the end of the page. This will show you how the component looks. You can also see the component in action. In the case of Menu, go to the ‘Simple Menu’ section and click on ‘OPEN MENU’.
+- Now, click on the ‘Show the source’ button. You can now see the source code of the component and use the same to add any component to your application.
