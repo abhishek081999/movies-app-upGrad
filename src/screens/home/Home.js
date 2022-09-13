@@ -4,7 +4,9 @@ import Header from '../../common/header/Header'
 
 export const Home = () => {
     return (
-        <div><Header /></div>
+        <div>
+        <Header heading={'Upcoming Movies'}/>
+    </div>
     )
 }
 
