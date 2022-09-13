@@ -1,0 +1,10 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    width: 76%;
+}
+.right{
+    width: 24%;
+}
