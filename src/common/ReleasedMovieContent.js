@@ -15,7 +15,7 @@ const ReleasedMovieContent = ({ data }) => {
     return (
         <ImageList sx={{
             height:350
-        }} cols={4}>
+        }} cols={4}gap={25}>
             {data.map((item) => (
                 <ImageListItem key={item.id} className='imageItem' >
                     <img
