@@ -1,5 +1,5 @@
 import React from 'react'
-import moviesData from '../../common/moviesData'
+import moviesData from '../../assets/moviesData'
 import './Home.css'
 import Header from '../../common/header/Header'
 import GridList from '../../common/GridList'

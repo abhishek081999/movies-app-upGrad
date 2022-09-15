@@ -1,11 +1,6 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import ListItemText from '@mui/material/ListItemText';
-import Select from '@mui/material/Select';
-import Checkbox from '@mui/material/Checkbox';
-import genres from "./genre"
+import { InputLabel, MenuItem, FormControl, ListItemText, Select, Checkbox } from '@mui/material';
+import genres from "../assets/genre"
 
 
 

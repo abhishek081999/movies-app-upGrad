@@ -1,7 +1,5 @@
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
+import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 import './ReleasedMovieContent.css';
 
 const ReleasedMovieContent = ({ data }) => {
