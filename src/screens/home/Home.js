@@ -20,7 +20,7 @@ export const Home = () => {
                 </div>
                 <div className='right'>
                     {/* Filter Container */}
-                    <MovieFilterCard setMoviesData={setMoviesData} />
+                    <MovieFilterCard setMoviesData={setMoviesData} moviesData={moviesData} defaultData={defaultData}/>
                 </div>
             </div>
         </div>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Card, CardActions, CardContent, Typography, TextField, FormControl, Button } from '@mui/material';
+import { Box, Card, CardActions, CardContent, Typography, TextField, FormControl, Button, IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 import GenreSelect from "./GenreSelect"
 import ArtistSelect from "./ArtistSelect"
 
-const card = (setFilterObject, filterObject) => (
+const card = (setFilterObject, filterObject, setMoviesData, moviesData, defaultData) => (
     <React.Fragment>
         <CardContent>
             <Typography sx={{ fontSize: 14 }} variant="h2" color="primary.light">
@@ -58,23 +59,34 @@ const card = (setFilterObject, filterObject) => (
             <CardActions sx={{
                 marginTop: "10px"
             }}>
-                <Button variant="contained" fullWidth>APPLY</Button>
+                <Button variant="contained" fullWidth onClick={() =>
+                    setMoviesData(() => moviesData.filter(movie => {
+                        return movie.title.toLowerCase().includes(filterObject.movieName.toLowerCase());
+                    }))
+                }>
+                    APPLY
+                </Button>
+                <IconButton aria-label="delete" size="small" onClick={() =>
+                    setMoviesData(defaultData)
+                }>
+                    <DeleteIcon />
+                </IconButton>
             </CardActions>
         </CardContent>
     </React.Fragment>
 );
 
-export default function MovieFilterCard({ setMoviesData }) {
+export default function MovieFilterCard({ setMoviesData, moviesData, defaultData }) {
 
     const [filterObject, setFilterObject] = useState({
         
     });
     // Test Data is used above for Filter Object
-    console.log(filterObject);
+    //console.log(filterObject);
 
     return (
         <Box sx={{ minWidth: 275 }} >
-            <Card variant="outlined">{card(setFilterObject, filterObject)}</Card>
+            <Card variant="outlined">{card(setFilterObject, filterObject, setMoviesData, moviesData, defaultData)}</Card>
         </Box>
     );
 }
