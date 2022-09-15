@@ -24,7 +24,7 @@ export default function GenreSelect() {
 
     return (
         <div>
-            <FormControl sx={{ mx: "auto", width: 250 }}>
+            <FormControl variant="standard" sx={{ width: 240 }}>
                 <InputLabel id="genreSearchLabel">Genres</InputLabel>
                 <Select
                     labelId="genreSearchLabel"

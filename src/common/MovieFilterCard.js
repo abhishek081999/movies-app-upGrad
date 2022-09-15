@@ -4,9 +4,10 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { TextField, FormControl, Button} from '@mui/material';
-import GenreSelect from "./GenreSelect";
-import ArtistSelect from"./ArtistSelect";
+import { TextField, FormControl, Button } from '@mui/material';
+import GenreSelect from "./GenreSelect"
+import ArtistSelect from "./ArtistSelect"
+
 const card = (
     <React.Fragment>
         <CardContent>
@@ -27,7 +28,7 @@ const card = (
                     <GenreSelect />
                 </CardActions>
                 <CardActions>
-                 <ArtistSelect />
+                    <ArtistSelect />
                 </CardActions>
                 <CardActions>
                     <TextField
@@ -35,7 +36,7 @@ const card = (
                         label="Release Date Start"
                         type="date"
                         variant="standard"
-                        defaultValue="dd-mm-yyyy"
+                        placeholder="dd-mm-yyyy"
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -48,7 +49,7 @@ const card = (
                         label="Release Date End"
                         type="date"
                         variant="standard"
-                        defaultValue="dd-mm-yyyy"
+                        placeholder="dd-mm-yyyy"
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -56,10 +57,12 @@ const card = (
                     />
                 </CardActions>
             </FormControl>
+            <CardActions sx={{
+                marginTop: "10px"
+            }}>
+                <Button variant="contained" fullWidth>APPLY</Button>
+            </CardActions>
         </CardContent>
-        <div>
-            <Button variant="contained" fullWidth>APPLY</Button>
-        </div>
     </React.Fragment>
 );
 

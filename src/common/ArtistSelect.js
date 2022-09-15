@@ -24,7 +24,7 @@ export default function GenreSelect() {
 
     return (
         <div>
-            <FormControl sx={{ mx: "auto", width: 250 }}>
+            <FormControl variant="standard" sx={{ width: 240 }}>
                 <InputLabel id="artistSearchLabel">Artists</InputLabel>
                 <Select
                     labelId="artistSearchLabel"
@@ -32,7 +32,6 @@ export default function GenreSelect() {
                     multiple
                     value={artistName}
                     onChange={handleChange}
-                    // input={<OutlinedInput label="" />}
                     renderValue={(selected) => selected.join(', ')}
                 >
                     {artists.map((item) => (
