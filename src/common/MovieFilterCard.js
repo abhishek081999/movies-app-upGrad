@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Box, Card, CardActions, CardContent, Typography, TextField, FormControl, Button } from '@mui/material';
 import GenreSelect from "./GenreSelect"
 import ArtistSelect from "./ArtistSelect"
 
-const card = (
+const card = (setFilterObject, filterObject) => (
     <React.Fragment>
         <CardContent>
             <Typography sx={{ fontSize: 14 }} variant="h2" color="primary.light">
@@ -17,13 +17,14 @@ const card = (
                         type="search"
                         variant="standard"
                         fullWidth
+                        onChange={(event) => setFilterObject({ ...filterObject, movieName: event.target.value })}
                     />
                 </CardActions>
                 <CardActions>
-                    <GenreSelect />
+                    <GenreSelect setFilterObject={setFilterObject} filterObject={filterObject}/>
                 </CardActions>
                 <CardActions>
-                    <ArtistSelect />
+                    <ArtistSelect setFilterObject={setFilterObject} filterObject={filterObject}/>
                 </CardActions>
                 <CardActions>
                     <TextField
@@ -36,6 +37,7 @@ const card = (
                             shrink: true,
                         }}
                         fullWidth
+                        onChange={(event) => setFilterObject({ ...filterObject, startDate: event.target.value })}
                     />
                 </CardActions>
                 <CardActions>
@@ -49,6 +51,7 @@ const card = (
                             shrink: true,
                         }}
                         fullWidth
+                        onChange={(event) => setFilterObject({ ...filterObject, endDate: event.target.value })}
                     />
                 </CardActions>
             </FormControl>
@@ -61,10 +64,17 @@ const card = (
     </React.Fragment>
 );
 
-export default function OutlinedCard() {
+export default function MovieFilterCard({ setMoviesData }) {
+
+    const [filterObject, setFilterObject] = useState({
+        
+    });
+    // Test Data is used above for Filter Object
+    console.log(filterObject);
+
     return (
-        <Box sx={{ minWidth: 275 }}>
-            <Card variant="outlined">{card}</Card>
+        <Box sx={{ minWidth: 275 }} >
+            <Card variant="outlined">{card(setFilterObject, filterObject)}</Card>
         </Box>
     );
 }

@@ -4,7 +4,7 @@ import genres from "../assets/genre"
 
 
 
-export default function GenreSelect() {
+export default function GenreSelect({ setFilterObject, filterObject }) {
     const [genreName, setGenreName] = React.useState([]);
 
     const handleChange = (event) => {
@@ -15,11 +15,16 @@ export default function GenreSelect() {
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
+
+        // Logging the Input of User for Debugging
+        // console.log(event.target.value);
+
+        setFilterObject({ ...filterObject, genreName: event.target.value })
     };
 
     return (
         <div>
-            <FormControl variant="standard" sx={{ width: 240 }}>
+            <FormControl variant="standard" sx={{ minWidth: 240, maxWidth: 240 }}>
                 <InputLabel id="genreSearchLabel">Genres</InputLabel>
                 <Select
                     labelId="genreSearchLabel"

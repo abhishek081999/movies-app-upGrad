@@ -1,5 +1,5 @@
-import React from 'react'
-import moviesData from '../../assets/moviesData'
+import React, { useState } from 'react'
+import defaultData from '../../assets/moviesData'
 import './Home.css'
 import Header from '../../common/header/Header'
 import GridList from '../../common/GridList'
@@ -7,10 +7,12 @@ import ReleasedMovieContent from '../../common/ReleasedMovieContent'
 import MovieFilterCard from "../../common/MovieFilterCard"
 
 export const Home = () => {
+    const [moviesData, setMoviesData] = useState(defaultData);
+
     return (
         <div>
             <Header heading={'Upcoming Movies'} />
-            <GridList data={moviesData} />
+            <GridList data={defaultData} />
             <div className="flex-container">
                 <div className='left'>
                     {/* Released Movies Left Side Container */}
@@ -18,7 +20,7 @@ export const Home = () => {
                 </div>
                 <div className='right'>
                     {/* Filter Container */}
-                    <MovieFilterCard />
+                    <MovieFilterCard setMoviesData={setMoviesData} />
                 </div>
             </div>
         </div>
