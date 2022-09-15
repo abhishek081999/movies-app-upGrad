@@ -5,13 +5,13 @@ import artists from "../assets/artists"
 
 
 export default function GenreSelect({ setFilterObject, filterObject }) {
-    const [artistName, setArtistName] = React.useState([]);
+    const [artist, setArtist] = React.useState([]);
 
     const handleChange = (event) => {
         const {
             target: { value },
         } = event;
-        setArtistName(
+        setArtist(
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
@@ -19,7 +19,7 @@ export default function GenreSelect({ setFilterObject, filterObject }) {
         // Logging the Input of User for Debugging
         // console.log(event.target.value);
 
-        setFilterObject({ ...filterObject, artistName: event.target.value })
+        setFilterObject({ ...filterObject, artist: event.target.value })
     };
 
     return (
@@ -30,13 +30,13 @@ export default function GenreSelect({ setFilterObject, filterObject }) {
                     labelId="artistSearchLabel"
                     id="artistSearch"
                     multiple
-                    value={artistName}
+                    value={artist}
                     onChange={handleChange}
                     renderValue={(selected) => selected.join(', ')}
                 >
                     {artists.map((item) => (
                         <MenuItem key={item.id} value={item.first_name + " " + item.last_name}>
-                            <Checkbox checked={artistName.indexOf(item.first_name + " " + item.last_name) > -1} />
+                            <Checkbox checked={artist.indexOf(item.first_name + " " + item.last_name) > -1} />
                             <ListItemText primary={item.first_name + " " + item.last_name} />
                         </MenuItem>
                     ))}

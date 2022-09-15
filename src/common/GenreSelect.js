@@ -5,13 +5,13 @@ import genres from "../assets/genre"
 
 
 export default function GenreSelect({ setFilterObject, filterObject }) {
-    const [genreName, setGenreName] = React.useState([]);
+    const [genre, setGenre] = React.useState([]);
 
     const handleChange = (event) => {
         const {
             target: { value },
         } = event;
-        setGenreName(
+        setGenre(
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
@@ -19,7 +19,7 @@ export default function GenreSelect({ setFilterObject, filterObject }) {
         // Logging the Input of User for Debugging
         // console.log(event.target.value);
 
-        setFilterObject({ ...filterObject, genreName: event.target.value })
+        setFilterObject({ ...filterObject, genre: event.target.value })
     };
 
     return (
@@ -30,14 +30,14 @@ export default function GenreSelect({ setFilterObject, filterObject }) {
                     labelId="genreSearchLabel"
                     id="genreSearch"
                     multiple
-                    value={genreName}
+                    value={genre}
                     onChange={handleChange}
                     // input={<OutlinedInput label="" />}
                     renderValue={(selected) => selected.join(', ')}
                 >
                     {genres.map((item) => (
                         <MenuItem key={item.id} value={item.name}>
-                            <Checkbox checked={genreName.indexOf(item.name) > -1} />
+                            <Checkbox checked={genre.indexOf(item.name) > -1} />
                             <ListItemText primary={item.name} />
                         </MenuItem>
                     ))}
