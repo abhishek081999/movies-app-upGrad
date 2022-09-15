@@ -1,14 +1,15 @@
-import React from 'react';
-import './Home.css';
-import Header from '../../common/header/Header';
-import '../../common/GridList';
-import GridList from '../../common/GridList';
-import moviesData from '../../common/moviesData';
-import ReleasedMovieContent from '../../common/ReleasedMovieContent';
+import React from 'react'
+import moviesData from '../../common/moviesData'
+import './Home.css'
+import Header from '../../common/header/Header'
+import GridList from '../../common/GridList'
+import ReleasedMovieContent from '../../common/ReleasedMovieContent'
+import MovieFilterCard from "../../common/MovieFilterCard"
+
 export const Home = () => {
     return (
         <div>
-         <Header heading={'Upcoming Movies'} />
+            <Header heading={'Upcoming Movies'} />
             <GridList data={moviesData} />
             <div className="flex-container">
                 <div className='left'>
@@ -17,11 +18,10 @@ export const Home = () => {
                 </div>
                 <div className='right'>
                     {/* Filter Container */}
-                    Filter Component
+                    <MovieFilterCard />
                 </div>
             </div>
         </div>
-
     )
 }
 
