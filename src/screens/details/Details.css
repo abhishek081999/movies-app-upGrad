@@ -1,16 +1,20 @@
-.container{
+.goBackToHome:hover {
+    cursor: pointer;
+  }
+  
+  .container {
     display: flex;
     flex-direction: row;
-}
-
-.left{
+  }
+  
+  .left {
     width: 20%;
-}
-
-.middle{
-    width: 50%;
-}
-
-.right{
-    width: 30%;
-}
+  }
+  
+  .middle {
+    width: 60%;
+  }
+  
+  .right {
+    width: 20%;
+  }
