@@ -1,10 +1,12 @@
 import React from 'react'
+import './Details.css'
 import { Typography } from '@mui/material'
 import Header from '../../common/header/Header'
 import Left from './Left'
-import './Details.css'
+import Middle from './Middle'
+import Right from './Right'
 
-export default function Details() {
+export default function Details({ movieInfo }) {
     return (
         <>
             <Header bookShow={true} />
@@ -17,9 +19,9 @@ export default function Details() {
             </Typography>
 
             <div className='container'>
-                <div className='left'><Left /></div>
-                <div className='middle'>Middle</div>
-                <div className='right'>Right</div>
+            <div className='left'><Left movieInfo={movieInfo} /></div>
+                <div className='middle'><Middle movieInfo={movieInfo} /></div>
+                <div className='right'><Right movieInfo={movieInfo} /></div>
             </div>
         </>
     )
