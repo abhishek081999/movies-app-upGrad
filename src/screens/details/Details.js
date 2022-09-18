@@ -11,7 +11,7 @@ export default function Details({ movieInfo }) {
     return (
         <>
             <Header bookShow={true} />
-            <Link to='/'>
+            <Link to='/' style={{ textDecoration: 'none' }}>
                 <Typography className="goBackToHome" variant='button' sx={{
                     margin: "8px 0px 0px 24px ",
                     // Margin Shorthand for Top, Right, Bottom, Left

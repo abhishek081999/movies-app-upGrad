@@ -114,6 +114,7 @@ const card = (setFilterObject, filterObject, setMoviesData, moviesData, defaultD
                       }
 
                       if (flag) return movie;
+                      return false;
                   }
                   );
                   setMoviesData(filteredMovies);

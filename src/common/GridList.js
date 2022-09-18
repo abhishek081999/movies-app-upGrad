@@ -15,6 +15,9 @@ export default function TitlebarImageList({ data }) {
                         src={item.poster_url}
                         alt={item.title}
                         loading="lazy"
+                        style={{
+                            height: '200px'
+                        }}
                     />
                     <ImageListItemBar
                         title={item.title}
