@@ -5,7 +5,7 @@ import GridList from '../../common/GridList'
 import ReleasedMovieContent from '../../common/ReleasedMovieContent'
 import MovieFilterCard from "../../common/MovieFilterCard"
 
-export const Home = ({ moviesData, setMoviesData, defaultData }) => {
+export const Home = ({ moviesData, setMoviesData, defaultData, setMovieInfo, movieInfo }) => {
 
     return (
         <div>
@@ -14,7 +14,7 @@ export const Home = ({ moviesData, setMoviesData, defaultData }) => {
             <div className="flex-container">
                 <div className='left'>
                     {/* Released Movies Left Side Container */}
-                    <ReleasedMovieContent data={moviesData} />
+                    <ReleasedMovieContent data={moviesData} setMovieInfo={setMovieInfo} movieInfo={movieInfo} />
                 </div>
                 <div className='right'>
                     {/* Filter Container */}

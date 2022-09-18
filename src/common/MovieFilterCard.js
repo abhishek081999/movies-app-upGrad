@@ -143,7 +143,7 @@ export default function MovieFilterCard({ setMoviesData, moviesData, defaultData
       
   });
   // Properties used for Filter Object
-  console.log(filterObject);
+  //console.log(filterObject);
 
   return (
       <Box sx={{ minWidth: 275 }} >
