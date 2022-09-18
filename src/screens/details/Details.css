@@ -1,21 +1,22 @@
 .goBackToHome:hover {
-    cursor: pointer;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: row;
-    margin: 10px 24px 0px 24px;
-  }
-  
-  .left {
-    width: 20%;
-  }
-  
-  .middle {
-    width: 60%;
-  }
-  
-  .right {
-    width: 20%;
-  }
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 24px 0px 24px;
+  /* Margin Shorthand for Top, Right, Bottom, Left */
+}
+
+.leftDetails {
+  width: 20%;
+}
+
+.middleDetails {
+  width: 60%;
+}
+
+.rightDetails {
+  width: 20%;
+}

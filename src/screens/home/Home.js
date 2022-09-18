@@ -12,11 +12,11 @@ export const Home = ({ moviesData, setMoviesData, defaultData, setMovieInfo, mov
             <Header heading={'Upcoming Movies'} />
             <GridList data={defaultData} />
             <div className="flex-container">
-                <div className='left'>
+                <div className='leftHome'>
                     {/* Released Movies Left Side Container */}
                     <ReleasedMovieContent data={moviesData} setMovieInfo={setMovieInfo} movieInfo={movieInfo} />
                 </div>
-                <div className='right'>
+                <div className='rightHome'>
                     {/* Filter Container */}
                     <MovieFilterCard setMoviesData={setMoviesData} moviesData={moviesData} defaultData={defaultData} />
                 </div>

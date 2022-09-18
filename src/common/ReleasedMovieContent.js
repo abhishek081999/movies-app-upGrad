@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 import './ReleasedMovieContent.css';
+import { Link } from "react-router-dom";
 
 const ReleasedMovieContent = ({ data, setMovieInfo, movieInfo }) => {
 
@@ -16,11 +17,13 @@ const ReleasedMovieContent = ({ data, setMovieInfo, movieInfo }) => {
         // Check for Update of State by uncommenting the above console.log
     }
     return (
+        <Link to='/details'>
         <ImageList sx={{
-            height:350
-        }} cols={4}gap={25}>
+            height: 350
+        }} cols={4} gap={25}>
+
             {data.map((item) => (
-                <ImageListItem key={item.id} className='imageItem' onClick={()=>handleClick(item)} >
+                <ImageListItem key={item.id} className='imageItem' onClick={() => handleClick(item)} >
                     <img
                         src={item.poster_url}
                         alt={item.title}
@@ -33,6 +36,7 @@ const ReleasedMovieContent = ({ data, setMovieInfo, movieInfo }) => {
                 </ImageListItem>
             ))}
         </ImageList>
+    </Link>
     );
 }
 
